@@ -1,5 +1,5 @@
 import numpy
-from methods import _train, _predict, _accuracy
+from methods import _train, _predict, _accuracy, _pretrain, _autoencode
 
 class Mlp:
 	def __init__(self, hiddenCfg = None, Xtrain=None, Dtrain=None):
@@ -10,9 +10,11 @@ class Mlp:
 		self.epochs_n = 1
 		self.mmtum = .0
 		self.reg = .0
+		self.stopTol = .0
 		self.Xtrain, self.Dtrain = None, None
 		self.nnCfg = []
 		self.W = []
+		self.Wac = []
 		
 		if Xtrain.any():
 			self.Xtrain = Xtrain
@@ -32,3 +34,5 @@ class Mlp:
 	train =	_train
 	predict = _predict
 	accuracy = _accuracy
+	pretrain = _pretrain
+	autoencode = _autoencode
