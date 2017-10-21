@@ -1,5 +1,6 @@
 # ignore all . files and . folders
 .*
+.pyc
 
 # verbosity if already tracked
 !/.gitignore
